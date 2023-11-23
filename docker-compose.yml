@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    image: fastapi-dashboard
+    command: uvicorn app:app --reload --host 0.0.0.0 --port 5001
+    volumes:
+      - .:/code
+    ports:
+      - "5001:5001"
